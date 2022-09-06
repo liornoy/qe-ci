@@ -9,7 +9,7 @@ script_path=${PWD}
 cp -r ibgp-single-hop ${metallb_path}/e2etest
 cd ${metallb_path}
 docker run -d --privileged  --name ibgp-single-hop --network kind --rm -v ${PWD}/e2etest/ibgp-single-hop/:/etc/frr frrouting/${frr_image}
-export USE_IBGP_SINGLE_HOP=trueb
+export USE_IBGP_SINGLE_HOP=true
 invoke e2etest
 
 echo "Starting setup for testing multi-hop scenrio"
